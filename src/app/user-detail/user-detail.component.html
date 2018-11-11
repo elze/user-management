@@ -1,0 +1,72 @@
+<div *ngIf="user">
+  <form #myForm="ngForm">  
+  <div class="row form-group">
+      <div class="col user-detail-label"><label for="name">Name</label><span class="req-star" *ngIf="isEditable"> *</span> </div>
+      <div class="col user-field">
+        <div *ngIf="isEditable">
+          <input type="text" class="form-control input-lg" id="name" required  
+            [(ngModel)]="user.name" name="name" #name="ngModel"/>
+          <div [hidden]="name.valid || name.pristine" class="alert alert-danger">Name is required</div>
+        </div>
+      <span *ngIf="!isEditable">{{user.name}}</span>
+      </div>
+  </div>
+  <div class="row form-group">
+      <div class="col user-detail-label"><label for="emailAddress">Email Address</label><span class="req-star" *ngIf="isEditable"> *</span></div>
+      <div class="col user-field">
+        <div *ngIf="isEditable">
+          <input type="email" class="form-control input-lg" id="emailAddress" 
+            name="emailAddress" [(ngModel)]="user.emailAddress" #emailAddress="ngModel" required email/>
+          <div [hidden]="emailAddress.valid || emailAddress.pristine" class="alert alert-danger">A valid email adddress is required</div>        
+        </div>
+        <span *ngIf="!isEditable">{{user.emailAddress}}</span>
+      </div>
+    </div>
+    <div class="row form-group">
+      <div class="col user-detail-label"><label for="streetAddress">Street Address</label></div>
+      <div class="col user-field">
+      <input *ngIf="isEditable" type="text" class="form-control input-lg" name="streetAddress" [(ngModel)]="user.streetAddress" />
+      <span *ngIf="!isEditable">{{user.streetAddress}}</span>
+      </div>
+    </div>
+    <div class="row form-group">
+      <div class="col user-detail-label"><label for="city">City</label></div>
+      <div class="col user-field">
+      <input *ngIf="isEditable" type="text" class="form-control input-lg" name="city" [(ngModel)]="user.city" />
+      <span *ngIf="!isEditable">{{user.city}}</span>
+      </div>
+    </div>
+    <div class="row form-group">
+      <div class="col user-detail-label">Region</div>
+      <div class="col user-field">
+      <input *ngIf="isEditable" type="text" class="form-control input-lg" name="region" [(ngModel)]="user.region"  />
+      <span *ngIf="!isEditable">{{user.region}}</span>
+      </div>
+    </div>
+    <div class="row form-group">
+    <div class="col user-detail-label">Zip Code</div>
+    <div class="col user-field">
+      <div *ngIf="isEditable">
+        <input type="text" id="postalCode" class="form-control input-lg" name="postalCode" [(ngModel)]="user.postalCode" 
+        #postalCode="ngModel" pattern="^\d{5}$"/>
+        <div [hidden]="postalCode.valid || postalCode.pristine" class="alert alert-danger">Zip code must be five digits</div>        
+      </div>          
+      <span *ngIf="!isEditable">{{user.postalCode}}</span>
+    </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <button *ngIf="isEditable" type="button" class="btn btn-outline-secondary float-right" (click)="cancel()">Cancel</button>            
+        </div>
+        <div class="col">
+            <button *ngIf="isEditable" type="button" class="btn btn-success float-left" (click)="save()" [disabled]="!myForm.form.valid">Save</button>
+        </div>
+    </div>      
+  </form> 
+  <div [hidden]="!actionSuccess" class="alert-div alert alert-success">
+      User {{actionName}} successfully.
+  </div> 
+  <div [hidden]="!actionError" class="alert-div alert alert-danger">
+      Error occurred: user was not {{actionName}}.
+  </div>      
+</div>            

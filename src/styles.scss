@@ -1,1 +1,58 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/scss/bootstrap.scss';
+@import '~bootstrap/scss/bootstrap-grid';
+$fa-font-path: "../node_modules/font-awesome/fonts";
+@import '~font-awesome/scss/font-awesome.scss';
+
+body {
+    margin: 2em;
+}
+
+div {
+    margin: .1em;
+}
+
+.header-bar {
+    background-color: rgb(0, 120, 215);
+    height: 4px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.add-user {
+    margin-top: 20px;
+}
+
+.alert-div {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.back-to-list  {    
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+/**
+.delete-button-row {
+    margin-bottom: 2px;
+}
+**/
+
+.req-star {
+    color: red;
+}  
+
+.user-field {
+    text-align: left;    
+    padding-top: 2px;
+}
+
+.user-detail-label {
+    text-align: right;    
+    font-size: smaller;
+    font-weight: bold;
+    display: table-cell;
+    vertical-align: baseline;
+    padding-top: 4px;
+}

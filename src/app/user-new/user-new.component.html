@@ -1,0 +1,5 @@
+<h3>Create New User</h3>
+<a class="btn btn-outline-secondary back-to-list" href="users">Back to Users list</a>            
+
+<app-user-detail [user]="user" [isEditable]="true" (needToSave)="save($event)" (needToCancel)="cancel($event)"
+[actionSuccess]="actionSuccess" [actionError]="actionError" [actionName]="actionName"></app-user-detail>
