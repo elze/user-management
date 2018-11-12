@@ -30,7 +30,11 @@ export class UserExistingComponent implements OnInit {
           this.userService.getUser(params.get('id'))))
       .subscribe(user => {
         this.user = user;
-      });    
+      },
+      error => {
+        this.actionError = true;
+        this.actionName = "found";
+        });
 
     this.route.queryParams
       .subscribe(params => {

@@ -10,10 +10,11 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
 import { UserExistingComponent } from './user-existing/user-existing.component';
 import { UserNewComponent } from './user-new/user-new.component';
 
-const appRoutes: Routes = [
+const appRoutes: Routes = [  
   { path: 'users', component: UsersComponent},
   { path: 'user', component: UserNewComponent},
-  { path: 'user/:id', component: UserExistingComponent}  
+  { path: 'user/:id', component: UserExistingComponent},
+  { path: '', component: UsersComponent}
 ];  
 
 
