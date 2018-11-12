@@ -4,6 +4,12 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 To build and run it on your machine: 
 
+- in your MySQL database, create a table 'user' like this:
+
+CREATE TABLE `user_mgmt`.`user` ( `id` INT NOT NULL AUTO_INCREMENT , `name` VARCHAR(256) NOT NULL , `emailAddress` VARCHAR(256) NOT NULL , `streetAddress` VARCHAR(512) NULL , `city` VARCHAR(128) NULL , `region` VARCHAR(128) NULL , `postalCode` INT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+
+(Here 'user_mgmt' is the name of the MySQL database. You can substitute your own database name.)
+
 - install angular-cli;
 
 - run ng build in the project's top level folder, i.e. /your/path/to/user-management
