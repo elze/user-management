@@ -2,26 +2,18 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.5.
 
-## Development server
+To build and run it on your machine: 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- install angular-cli;
 
-## Code scaffolding
+- run ng build in the project's top level folder, i.e. /your/path/to/user-management
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- open Visual Studio Code
 
-## Build
+- from File menu, select Open Folder, and open the project's top level folder, i.e.  /your/path/to/user-management
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+- in src/server/routes.js, change the MySQL server credentials (which are currently blanked out with stars) to your own MySQL database credentials
 
-## Running unit tests
+- in Visual Studio Code side menu, click the bug icon, then click the green Launch button that appears. This should start the Express.js server. It should be running on localhost:3000
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+- in your browser, go to localhost:3000/users
